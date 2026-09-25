@@ -1,23 +1,70 @@
 aid: animaj
+
 name: Animaj
-description: 'Animaj is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://cdn.prod.website-files.com/651c3d5aee92eea77fca1509/652d340f40eafe92f23ffe5c_animaj-preview-illustration.webp
+
+description: 'Animaj is a technology company focused on providing innovative solutions in the animal health and welfare sector. The company aims to leverage data-driven platforms to improve animal care, monitoring, and management for farms, veterinary practices, and pet owners. Through its API offerings, Animaj enables integration of real-time health metrics, environmental data, and analytics to support better decision-making and enhance overall animal well-being across various industries.'
+
 url: https://raw.githubusercontent.com/api-evangelist/animaj/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-24'
+
 modified: '2026-09-24'
+
 tags:
-- Company
-apis: []
+- Animal Health
+- Data Platform
+- API
+- SaaS
+- Innovation
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/animaj-hosts.yml
+- type: Vendors
+  url: vendors/animaj-vendors.yml
+- type: Newsroom
+  url: https://www.animaj.com/news
+- type: Login
+  url: https://www.animaj.com/screening-room/login
+- type: DomainSecurity
+  url: security/animaj-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/animaj
+  url: https://www.animaj.com
+- type: PrivacyPolicy
+  url: https://www.animaj.com/privacy-policy
+- type: TermsOfService
+  url: https://www.animaj.com/terms-of-use
+
+apis: []
+
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: "Screening room login page requires authentication, blocking API discovery"
+  evidence:
+    - url: https://www.animaj.com/screening-room/login
+      status: 200
+  checked: 2026-09-25
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 5
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
